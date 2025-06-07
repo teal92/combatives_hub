@@ -16,20 +16,19 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 1rem;
+  padding-top: 150px; /* Adjusted for header height */
 }
 
-/* Container for login/signup */
-#auth-forms {
+
+/* New centering wrapper */
+#auth-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  max-width: 600px;
-  background-color: #111;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  max-width: 420px;
 }
 
 /* Headings and text */
@@ -98,7 +97,7 @@ footer {
   border-radius: 12px;
   box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
   max-width: 400px;
-  width: 100%;
+  width: 75%;
 }
 
 .toggle-link {
@@ -115,4 +114,16 @@ footer {
 
 .hidden {
   display: none;
+}
+
+.signup:hover,
+.signup:focus,
+.signup:active {
+  color: #4b462b ;
+}
+
+.login:hover,
+.login:focus,
+.login:active {
+  color: #4b462b ;
 }

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Profile - Combatives Hub</title>
+  <link rel="stylesheet" href="profile.css" />
+</head>
+<body>
+
+  <main class="profile-container">
+    <h1>Complete Your Profile</h1>
+
+    <form class="profile-form">
+
+      <!-- Prefilled Fields -->
+      <div class="form-group">
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" value="John Doe" readonly />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" value="john.doe@example.com" readonly />
+      </div>
+
+      <!-- Custom Fields -->
+
+      <!--profile pic-->
+      <div class="form-group">
+        <label for="profile-pic">Profile Photo</label>
+        <input type="file" id="profile-pic" accept="image/*" />
+      </div>
+
+      <!--username-->
+      <div class="form-group">
+        <label for="nickname">Nickname / Display Name</label>
+        <input type="text" id="nickname" placeholder="e.g., IronFist" />
+      </div>
+
+      <!--user role to determine the type of dashboard the user sees-->
+      <div class="form-group">
+        <label for="user-role">Role</label>
+        <select id="user-role">
+        <option value="student">Student</option>
+        <option value="instructor">Instructor</option>
+        <option value="manager">Program Manager</option>
+        </select>
+      </div>
+
+
+      <div class="form-group">
+        <label for="installation">Military Installation</label>
+        <select id="installation">
+          <option value="">Select your base</option>
+          <option>Fort Bragg</option>
+          <option>Fort Campbell</option>
+          <option>Fort Hood</option>
+          <option>Fort Benning</option>
+          <option>Fort Carson</option>
+          <option>Fort Drum</option>
+          <option>Fort Stewart</option>
+          <option>Fort Bliss</option>
+          <option>Fort Sill</option>
+          <option>Fort Polk</option>
+          <option>Fort Eisenhower</option>
+          <option>Fort Riley</option>
+          <option>Fort Leonard Wood</option>
+          <option>Fort Knox</option>
+          <option>Fort Jackson</option>
+          <option>HAAF</option>
+          <option>Eglin AFB</option>
+
+          <option>Joint Base Lewis-McChord</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="level">Combatives Certification Level</label>
+        <select id="level">
+          <option value="">Select level</option>
+          <option>Level 1 (BCC)</option>
+          <option>Level 2 (TCC)</option>
+          <option>Level 3 (CMTC)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="color">Jiu Jitu belt</label>
+        <select id="color">
+            <option value="">Select color</option>
+            <option>White</option>
+            <option>White + 1 stripe</option>
+            <option>White + 2 stripes</option>
+            <option>White + 3 stripes</option>
+            <option>White + 4 stripes</option>
+            <option>Blue</option>
+            <option>Blue + 1 stripe</option>
+            <option>Blue + 2 stripes</option>
+            <option>Blue + 3 stripes</option>
+            <option>Blue + 4 stripes</option>
+            <option>Purple</option>
+            <option>Purple + 1 stripe</option>
+            <option>Purple + 2 stripes</option>
+            <option>Purple + 3 stripes</option>
+            <option>Purple + 4 stripes</option>
+            <option>Brown</option>
+            <option>Brown + 1 stripe</option>  
+            <option>Brown + 2 stripes</option>
+            <option>Brown + 3 stripes</option>
+            <option>Brown + 4 stripes</option>
+            <option>Black</option>
+            <option>Black 1st degree</option>
+            <option>Black 2nd degree</option> 
+            <option>Black 3rd degree</option>
+            <option>Black 4th or higher</option>
+          
+
+        </select>
+      </div>
+
+
+      <!--user role, important for dashboard ui selection-->
+<div class="form-group">
+  <label for="user-role">Role</label>
+  <select id="user-role">
+    <option value="student">Student</option>
+    <option value="instructor">Instructor</option>
+    <option value="manager">Program Manager</option>
+  </select>
+</div>
+
+
+      <button type="submit">Continue to Dashboard</button>
+    </form>
+  </main>
+
+  <!--saves whatever role the user selects for the dashboard follow on-->
+<script>
+  const form = document.querySelector('.profile-form');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Stop form from refreshing page
+
+    const selectedRole = document.getElementById('user-role').value;
+    localStorage.setItem('userRole', selectedRole);
+
+    // Redirect to dashboard
+    window.location.href = 'dashboard.html';
+  });
+</script>
+
+
+
+</body>
+</html>

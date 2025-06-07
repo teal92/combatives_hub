@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Combatives Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="stylesheet" href="dash_panel.css" />
+</head>
+
+<body onload="loadDashboardView()">
+
+    
+
+<header class="dashboard-header">
+  <div class="header-row">
+    <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+    <h1>Combatives Hub</h1>
+  </div>
+
+  <div class="user-info">
+    <span>📍 Fort Bragg</span>
+    <button>Change</button>
+    <span>👥 Followers: 128</span>
+    <button>Profile</button>
+  </div>
+
+  <nav class="sidebar" id="sidebar">
+    <ul class="nav-links">
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Schedule</a></li>
+      <li><a href="#">Programs</a></li>
+      <li><a href="#">Resources</a></li>
+      <li><a href="#">Settings</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Slide-Out Sidebar Panel -->
+<div id="sidebarPanel" class="sidebar-panel hidden">
+  <div class="sidebar-header">
+    <span class="sidebar-close" onclick="toggleSidebar()">✕</span>
+    <h3>Navigation</h3>
+  </div>
+  <ul class="sidebar-links">
+    <li><a href="#">Dashboard</a></li>
+    <li><a href="#">Schedule</a></li>
+    <li><a href="#">Programs</a></li>
+    <li><a href="#">Resources</a></li>
+    <li><a href="#">Settings</a></li>
+  </ul>
+</div>
+
+<!-- Optional dark overlay -->
+<div id="overlay" class="overlay hidden" onclick="toggleSidebar()"></div>
+
+
+
+
+
+
+
+<!--quick actions toolbar-->
+<div class="quick-actions">
+    <button>Add upcoming classes (go to calender)</button>
+    <button>Notify Followers (goes to html with options)</button>
+    <button>Manage Program (instr., classes, etc)</button>
+</div>
+
+<!--Main calender area-->
+<section class="calendar-section">
+  <h2>Schedule</h2>
+  <div class="calendar-grid">
+    <!-- Calendar days & events will be placed here -->
+  </div>
+</section>
+
+
+ 
+  <!-- Shared elements like nav/sidebar go here -->
+
+  <!-- Program Manager Dashboard View -->
+  <div id="manager-view" class="dashboard-section hidden">
+    <h2>Program Manager Dashboard</h2>
+    <!-- Your layout for managers -->
+  </div>
+
+  <!-- Student Dashboard View -->
+  <div id="student-view" class="dashboard-section hidden">
+    <h2>Student Dashboard</h2>
+    <!-- Your layout for students -->
+  </div>
+
+  <!-- Instructor Dashboard View -->
+  <div id="instructor-view" class="dashboard-section hidden">
+    <h2>Instructor Dashboard</h2>
+    <!-- Your layout for instructors -->
+<script>
+    function loadDashboardView() {
+  const role = localStorage.getItem("userRole");
+
+  document.getElementById("manager-view").classList.toggle("hidden", role !== "manager");
+  document.getElementById("student-view").classList.toggle("hidden", role !== "student");
+  document.getElementById("instructor-view").classList.toggle("hidden", role !== "instructor");
+}
+</script>
+
+
+
+<script>
+  function toggleSidebar() {
+    const panel = document.getElementById("sidebarPanel");
+    const overlay = document.getElementById("overlay");
+    panel.classList.toggle("show");
+    overlay.classList.toggle("hidden");
+  }
+</script>
+
+
+</body>
+
+
+
+
