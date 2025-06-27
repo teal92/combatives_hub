@@ -111,7 +111,9 @@
   function toggleSidebar() {
     const panel = document.getElementById("sidebarPanel");
     const overlay = document.getElementById("overlay");
+
     panel.classList.toggle("show");
+    panel.classList.toggle("hidden");
     overlay.classList.toggle("hidden");
   }
 </script>
