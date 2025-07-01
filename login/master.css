@@ -10,6 +10,19 @@ body {
   min-height: 100vh;
 }
 
+
+
+/*image*/
+.hero-logo {
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  width: 180px;
+  max-width: 120%;
+   filter: drop-shadow(0 0 8px rgba(255, 217, 0, 0.462));
+}
+
+
+
 /* Center main content */
 main {
   flex: 1;
@@ -17,7 +30,7 @@ main {
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  padding-top: 150px; /* Adjusted for header height */
+  padding-top: 60px; /* Adjusted for header height */
 }
 
 
@@ -25,6 +38,8 @@ main {
 #auth-wrapper {
   display: flex;
   flex-direction: column;
+  padding-top: 0.5rem;
+  margin-top: 0;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -45,7 +60,7 @@ label {
 }
 
 input {
-  width: 100%;
+  width: 90%;
   padding: 0.75rem;
   margin-bottom: 1rem;
   border: none;
@@ -54,10 +69,23 @@ input {
   color: #FFD700;
 }
 
+.error-box {
+  color: #b30000;           /* Deep red for error text */
+  background-color: #ffe6e6; /* Soft red background */
+  border: 1px solid #b30000;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+
 /* Buttons */
 button {
   width: 100%;
   padding: 0.75rem;
+  margin: auto auto;
   background-color: #FFD700;
   color: #000;
   font-weight: bold;
@@ -98,6 +126,7 @@ footer {
   box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
   max-width: 400px;
   width: 75%;
+  margin: 0 auto;
 }
 
 .toggle-link {
@@ -126,4 +155,5 @@ footer {
 .login:focus,
 .login:active {
   color: #4b462b ;
+  margin: auto auto;
 }

@@ -7,7 +7,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #000;
+  background-color: #1e1d1d;
   color: #FFD700;
   min-height: 100vh;
   padding: 1rem;
@@ -34,31 +34,6 @@ body {
   margin-left: 1rem;
 }
 
-/* QUICK ACTIONS */
-.quick-actions {
-  display: flex;
-  flex-wrap: wrap; 
-  justify-content: center;
-  width: 100%;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.quick-actions button {
-  flex: 0 1 auto;
-  background-color: #FFD700;
-  color: #000;
-  border: none;
-  padding: 0.75rem 1.25rem;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.quick-actions button:hover {
-  background-color: #e6c200;
-}
 
 /* SECTIONS */
 .dashboard-section {
@@ -90,18 +65,19 @@ body {
     text-align: center;
     gap: 0.75rem;
   }
-
+}
 .admin-actions {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 1.2rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
 .admin-actions button {
-  width: 90%;
+  width: 75%;
   max-width: 400px;
   padding: 12px 20px;
   font-size: 1rem;
@@ -113,7 +89,7 @@ body {
   cursor: pointer;
   text-align: center;
   display: block;
-  margin: 0 auto;
+  margin: 0.5rem auto;
   transition: background-color 0.3s ease;
 }
 
@@ -122,27 +98,19 @@ body {
   background-color: #e5c100;
 }
 
-.section-divider {
-  height: 2px;
-  background-color: #FFD700;
-  border: none;
-  margin: 2rem auto;
-  width: 90%;
-  max-width: 500px;
+
+
+.admin-only {
+  display: none; /* Hide admin-only actions on smaller screens */
 }
 
-
-  .admin-only {
-    display: none; /* Hide admin-only actions on smaller screens */
-  }
-
-  .user-info {
+.user-info {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }
-}
+
 
 
 /*side bar css*/
@@ -159,6 +127,14 @@ body {
   cursor: pointer;
   color: #ffd900;
   display: none;
+}
+
+.version-info {
+  color: #aaa;
+  font-size: 0.85rem;
+  list-style: none;
+  
+  
 }
 
 
@@ -198,7 +174,7 @@ body {
 }
 
 .calendar-grid div {
-  background-color: #222;
+  background-color: #3e3d3d;
   border-radius: 4px;
   text-align: center;
   padding: 0.5rem 0;
@@ -235,7 +211,10 @@ body {
 
 
 .section-divider {
-  height: 1px;
-  background-color: #444;
-  margin: 1rem 0;
+  height: 2px;
+  background-color: #212121;
+  border: none;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 500px;
 }

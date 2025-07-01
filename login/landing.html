@@ -17,10 +17,26 @@
   </header>
 
   <main>
-    <section id="auth-wrapper">
+
+    
+
+  <section id="auth-wrapper">
+
+  <img src="../media/macp_logo.png" alt="Combatives Logo" class="hero-logo" />
+
   <div id="login-form" class="auth-panel">
     <h2>Login</h2>
-    <form>
+
+
+    <!--error box messages-->
+    <?php if (isset($_GET['error'])): ?>
+  <div class="error-box">
+    <?php echo htmlspecialchars($_GET['error']); ?>
+  </div>
+    <?php endif; ?>
+
+
+    <form action="login.php" method="POST">
       <label for="login-email">Email</label>
       <input type="email" id="login-email" name="email" required>
 
@@ -34,7 +50,7 @@
 
   <div id="signup-form" class="auth-panel hidden">
     <h2>Sign Up</h2>
-    <form>
+    <form action="signup.php" method="POST">
       <label for="signup-first">First Name</label>
       <input type="text" id="signup-first" name="first" required>
 
