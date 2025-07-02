@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION['user_id'] = $user['id'];
 
             if ($user['profile_completed']) {
-                header("Location: ../dashboard/dashboard.html");
+                header("Location: /dashboard/dashboard.html");
             } else {
                 header("Location: ../profile/user_prof.html");
             }
