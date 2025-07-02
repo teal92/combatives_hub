@@ -43,11 +43,11 @@
     <h3>Navigation</h3>
   </div>
   <ul class="sidebar-links">
-    <li><a href="#">Dashboard</a></li>
-    <li><a href="#">Program Resources</a></li>
-    <li><a hreft="#">Installations List</a></li>
-    <li><a hreft="#">Contact</a></li>
-    <li><a href="#">Settings</a></li>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="program_resources.html">Program Resources</a></li>
+    <li><a hreft="installations.html">Installations List</a></li>
+    <li><a hreft="contact.html">Contact</a></li>
+    <li><a href="settings.html">Settings</a></li>
     <li><a href="#">Logout</a></li>
     <li class="version-info">Last Update: <strong>06/29/2025</strong></li>
     <li class="version-info">Version: <strong>0.1.0</strong></li>
@@ -203,6 +203,57 @@ if (userRole === 'manager' || userRole === 'instructor') {
 }
 
 </script>
+
+
+<!-- Snackbar -->
+<div id="snackbar"></div>
+
+<script>
+  window.onload = function () {
+    loadDashboardView();
+
+    const nickname = localStorage.getItem("nickname");
+    if (nickname) {
+      const snackbar = document.getElementById("snackbar");
+      snackbar.textContent = `Welcome, ${nickname}!`;
+      snackbar.className = "show";
+      setTimeout(() => snackbar.className = snackbar.className.replace("show", ""), 3000);
+    }
+  };
+</script>
+
+<style>
+  #snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 12px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+  }
+
+  #snackbar.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  @keyframes fadein {
+    from { bottom: 0; opacity: 0; }
+    to { bottom: 30px; opacity: 1; }
+  }
+
+  @keyframes fadeout {
+    from { bottom: 30px; opacity: 1; }
+    to { bottom: 0; opacity: 0; }
+  }
+</style>
 
 
 </body>

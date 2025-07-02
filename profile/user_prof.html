@@ -11,22 +11,22 @@
   <main class="profile-container">
     <h1>Complete Your Profile</h1>
 
-    <form class="profile-form">
+<form class="profile-form" action="/profile/profile_save.php" method="POST">
 
-      <!-- Prefilled Fields -->
+      <!-- Prefilled Fields    -->
       <div class="form-group">
         <label for="first-name">First Name</label>
-        <input type="text" id="first-name" placeholder="John" />
+        <input type="text" id="first-name" name="first_name" placeholder="John" />
       </div>
 
       <div class="form-group">
         <label for="last-name">Last Name</label>
-        <input type="text" id="last-name" placeholder="Doe" />
+        <input type="text" id="last-name" name="last_name" placeholder="Doe" />
       </div>
 
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" id="email" placeholder="personal or .mil" />
+        <input type="email" id="email" name="email" placeholder="personal or .mil" />
       </div>
 
       <!-- Custom Fields -->
@@ -40,13 +40,13 @@
       <!--username-->
       <div class="form-group">
         <label for="nickname">Nickname / Display Name</label>
-        <input type="text" id="nickname" placeholder="e.g., IronFist" />
+        <input type="text" id="nickname" name="nickname" placeholder="e.g., IronFist" />
       </div>
 
 
       <div class="form-group">
-        <label for="installations">Military Installation <br> (can pick more than 1):</label>
-        <select id="installations" name="installations" multiple>
+        <label for="installations">Military Installation</label>
+        <select id="installations" name="installations[]" multiple>
           <option value="Fort Bragg">Fort Bragg</option>
           <option value="Fort Campbell">Fort Campbell</option>
           <option value="Fort Hood">Fort Hood</option>
@@ -57,7 +57,7 @@
           <option value="Fort Bliss">Fort Bliss</option>
           <option value="Fort Sill">Fort Sill</option>
           <option value="Fort Polk">Fort Polk</option>
-          <option value="Fort Eisenhower">Fort Eisenhower</option>
+          <option value="Fort Gordon">Fort Gordon</option>
           <option value="Fort Riley">Fort Riley</option>
           <option value="Fort Leonard Wood">Fort Leonard Wood</option>
           <option value="Fort Knox">Fort Knox</option>
@@ -71,7 +71,7 @@
 
       <div class="form-group">
         <label for="level">Combatives Certification Level</label>
-        <select id="level">
+        <select id="level" name="level">
           <option value="">Select level</option>
           <option>Level 1 (BCC)</option>
           <option>Level 2 (TCC)</option>
@@ -79,9 +79,11 @@
         </select>
       </div>
 
+
+      <!--
       <div class="form-group">
         <label for="color">Jiu Jitu belt</label>
-        <select id="color">
+        <select id="color" name="color">
             <option value="">Select color</option>
             <option>White</option>
             <option>White + 1 stripe</option>
@@ -112,12 +114,13 @@
 
         </select>
       </div>
-
+                   -->
 
       <!--user role, important for dashboard ui selection-->
 <div class="form-group">
   <label for="user-role">Role</label>
-  <select id="user-role">
+  <select id="user-role" name="user_role">
+    <option value="">Select level</option>
     <option value="student">Student</option>
     <option value="instructor">Instructor</option>
     <option value="manager">Program Manager</option>
@@ -129,18 +132,26 @@
     </form>
   </main>
 
-  <!--saves whatever role the user selects for the dashboard follow on-->
 <script>
-  const form = document.querySelector('.profile-form');
-  form.addEventListener('submit', function(event) {
-    event.preventDefault(); // Stop form from refreshing page
+document.querySelector('.profile-form').addEventListener('submit', function (e) {
+  const requiredFields = ['first-name', 'last-name', 'email', 'level', 'user-role'];
+  let hasError = false;
 
-    const selectedRole = document.getElementById('user-role').value;
-    localStorage.setItem('userRole', selectedRole);
-
-    // Redirect to dashboard
-    window.location.href = 'dashboard.html';
+  requiredFields.forEach(id => {
+    const field = document.getElementById(id);
+    if (!field.value.trim()) {
+      field.style.border = '2px solid red';
+      hasError = true;
+    } else {
+      field.style.border = '';
+    }
   });
+
+  if (hasError) {
+    e.preventDefault();
+    alert("Please fill out all required fields to complete your profile.");
+  }
+});
 </script>
 
 
