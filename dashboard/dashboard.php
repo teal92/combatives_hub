@@ -1,3 +1,29 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+session_start();
+require_once '../login/db.php';
+if (!isset($pdo)) { die("DB not loaded"); }
+
+
+$user_id = $_SESSION['user_id'] ?? null;
+
+if (!$user_id) {
+    header("Location: ../login.html?error=session_expired");
+    exit;
+}
+
+$stmt = $pdo->prepare("SELECT installation FROM users WHERE id = ?");
+$stmt->execute([$user_id]);
+$installation = $stmt->fetchColumn();
+
+$followerStmt = $pdo->prepare("SELECT COUNT(*) FROM users WHERE installation = ?");
+$followerStmt->execute([$installation]);
+$followerCount = $followerStmt->fetchColumn();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,13 +45,13 @@
   </div>
 
   <div class="user-info">
-    <span>📍 Fort Bragg</span>
-    <br>
-    <span>👥 Followers: 128</span>
-    <button onclick="window.location.href='../installations/installations.html'">View</button>
-    <button onclick="window.location.href='../installations/installations.html'">Change</button>
-    
-  </div>
+  <span>📍 <?php echo htmlspecialchars($installation ?? ''); ?></span>
+  <span>👥 Followers: <?php echo $followerCount; ?></span>
+  <button onclick="window.location.href='../installations/<?php echo strtolower(str_replace(' ', '-', $installation)); ?>.html'">View</button>
+  <button onclick="window.location.href='../installations/installations.html'">Change</button>
+</div>
+
+
 
   <nav class="sidebar" id="sidebar">
     <ul class="nav-links">

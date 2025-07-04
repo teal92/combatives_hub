@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Request New Unit</title>
+  
+<link rel="stylesheet" href="../css/request_form.css">
+<link rel="stylesheet" href="../css/base.css">
+
+
+
+</head>
+<body>
+  <div class="container">
+    <h2>Request a New Unit</h2>
+
+    <p>*Note: To mitigate fake entries and/or griefing, these requests are vetted. Admin may reach out to you with additional information requests</p>
+
+ <hr>
+
+    <form action="submit_unit.php" method="post" class="form-container">
+      <label for="unit_name">Unit Name:</label>
+      <input type="text" id="unit_name" name="unit_name" placeholder="ex. 82nd AB, 1st SFG, MCoE, Ohio Nat. Guard" required>
+
+      <label for="base">Associated Installation:</label>
+      <input type="text" id="base" name="base" placeholder="ex. Ft. Bragg" required>
+
+      <label for="unit_type">Unit Type:</label>
+      <input type="text" id="unit_type" name="unit_type" placeholder="ex. Aviation, Cyber, Infanty">
+
+      <label for="additional_notes">Additional Notes:</label>
+      <textarea id="additional_notes" name="additional_notes" placeholder="any additional info about your program or unit" rows="4"></textarea>
+
+      <button type="submit">Submit Request</button>
+    </form>
+
+    <p style="margin-top: 20px;"><a href="installations.html">← Back to Installations</a></p>
+  </div>
+</body>
+</html>

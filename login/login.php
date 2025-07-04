@@ -3,7 +3,11 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 session_start();
-require_once 'db.php'; // Update the path if needed
+require_once 'db.php'; 
+if (!isset($pdo)) {
+    die("PDO is not set — DB connection failed.");
+}
+
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST['email'];
@@ -18,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION['user_id'] = $user['id'];
 
             if ($user['profile_completed']) {
-                header("Location: /dashboard/dashboard.html");
+                header("Location: ../dashboard/dashboard.php");
             } else {
                 header("Location: ../profile/user_prof.html");
             }

@@ -1,8 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><title>Installations List</title></head>
+<head>
+  <meta charset="UTF-8">
+  <title>Installations List</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/installations_list.css">
+  <link rel="stylesheet" href="../dashboard/dash_panel.css">
+
+
+
+</head>
 <body>
-  <h1>Installations</h1>
-  <p>Browse all installations. Click a name to view its page.</p>
+    <!-- Hamburger Header -->
+     
+<div class="page-header">
+  <div class="hamburger" onclick="toggleSidebar()">☰</div>
+  <h1 class="page-title">Installations</h1>
+</div>
+
+
+
+<!-- Sidebar Panel -->
+<div id="sidebarPanel" class="sidebar-panel hidden">
+  <div class="sidebar-header">
+    <span class="sidebar-close" onclick="toggleSidebar()">✕</span>
+    <h3>Navigation</h3>
+  </div>
+  <ul class="sidebar-links">
+    <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
+    <li><a href="installations.html">Installations</a></li>
+    <li><a href="../program_resources.html">Program Resources</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+    <li><a href="../settings.html">Settings</a></li>
+    <li><a href="#">Logout</a></li>
+  </ul>
+</div>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay hidden" onclick="toggleSidebar()"></div>
+
+<hr>
+  <div class="install-card">
+    <h3>3rd SFG</h3>
+    <div class="install-actions">
+      <form action="follow.php" method="post">
+        <input type="hidden" name="installation" value="3rd SFG">
+        <button type="submit">Follow</button>
+      </form>
+      <button onclick="window.location.href='3rd-sfg.html'">View</button>
+    </div>
+  </div>
+<hr>
+  <div class="install-card">
+    <h3>101st</h3>
+    <div class="install-actions">
+      <form action="follow.php" method="post">
+        <input type="hidden" name="installation" value="101st">
+        <button type="submit">Follow</button>
+      </form>
+      <button onclick="window.location.href='101st.html'">View</button>
+    </div>
+  </div>
+
+  <div class="install-card">
+    <h3>5th SFG</h3>
+    <div class="install-actions">
+      <form action="follow.php" method="post">
+        <input type="hidden" name="installation" value="5th SFB">
+        <button type="submit">Follow</button>
+      </form>
+      <button onclick="window.location.href='5th-sfg.html'">View</button>
+    </div>
+  </div>
+
+  <div class="install-card">
+    <h3>2 CR</h3>
+    <div class="install-actions">
+      <form action="follow.php" method="post">
+        <input type="hidden" name="installation" value="2 CR">
+        <button type="submit">Follow</button>
+      </form>
+      <button onclick="window.location.href='2cr.html'">View</button>
+    </div>
+  </div>
+
+  <div class="install-card">
+    <h3>3 CR</h3>
+    <div class="install-actions">
+      <form action="follow.php" method="post">
+        <input type="hidden" name="installation" value="3 CR">
+        <button type="submit">Follow</button>
+      </form>
+      <button onclick="window.location.href='3cr.html'">View</button>
+    </div>
+  </div>
+
+  <div class="install-card">
+    <h3>MCoE</h3>
+    <div class="install-actions">
+      <form action="follow.php" method="post">
+        <input type="hidden" name="installation" value="MCoE">
+        <button type="submit">Follow</button>
+      </form>
+      <button onclick="window.location.href='mcoe.html'">View</button>
+    </div>
+  </div>
+
+  <div class="install-card">
+    <h3>82nd Airborne</h3>
+    <div class="install-actions">
+      <form action="follow.php" method="post">
+        <input type="hidden" name="installation" value="82nd">
+        <button type="submit">Follow</button>
+      </form>
+      <button onclick="window.location.href='82nd.html'">View</button>
+    </div>
+  </div>
+
+  <div class="install-card">
+    <h3>4th ID</h3>
+    <div class="install-actions">
+      <form action="follow.php" method="post">
+        <input type="hidden" name="installation" value="4th ID">
+        <button type="submit">Follow</button>
+      </form>
+      <button onclick="window.location.href='4th-id.html'">View</button>
+    </div>
+  </div>
+
+  <div class="install-card">
+    <h3>10th SFG</h3>
+    <div class="install-actions">
+      <form action="follow.php" method="post">
+        <input type="hidden" name="installation" value="10th SFG">
+        <button type="submit">Follow</button>
+      </form>
+      <button onclick="window.location.href='10th-sfg.html'">View</button>
+    </div>
+  </div>
+
+  <div class="install-card">
+    <h3>1st ID</h3>
+    <div class="install-actions">
+      <form action="follow.php" method="post">
+        <input type="hidden" name="installation" value="1st ID">
+        <button type="submit">Follow</button>
+      </form>
+      <button onclick="window.location.href='1st-id.html'">View</button>
+    </div>
+  </div>
+
+  <div class="install-card">
+    <h3>1st SFG</h3>
+    <div class="install-actions">
+      <form action="follow.php" method="post">
+        <input type="hidden" name="installation" value="1st SFG">
+        <button type="submit">Follow</button>
+      </form>
+      <button onclick="window.location.href='1st-sfg.html'">View</button>
+    </div>
+  </div>
+
+  <div class="install-card">
+    <h3>3rd ID</h3>
+    <div class="install-actions">
+      <form action="follow.php" method="post">
+        <input type="hidden" name="installation" value="3rd ID">
+        <button type="submit">Follow</button>
+      </form>
+      <button onclick="window.location.href='3rd-id.html'">View</button>
+    </div>
+  </div>
+
+  <div class="install-card">
+    <h3>75th Ranger Regiment</h3>
+    <div class="install-actions">
+      <form action="follow.php" method="post">
+        <input type="hidden" name="installation" value="75th Ranger Regiment">
+        <button type="submit">Follow</button>
+      </form>
+      <button onclick="window.location.href='75th-rr.html'">View</button>
+    </div>
+  </div>
+
+  <div class="install-card">
+    <h3>BAMC</h3>
+    <div class="install-actions">
+      <form action="follow.php" method="post">
+        <input type="hidden" name="installation" value="BAMC">
+        <button type="submit">Follow</button>
+      </form>
+      <button onclick="window.location.href='bamc.html'">View</button>
+    </div>
+  </div>
+
+  <div class="install-card">
+    <h3>7th ID</h3>
+    <div class="install-actions">
+      <form action="follow.php" method="post">
+        <input type="hidden" name="installation" value="7th ID">
+        <button type="submit">Follow</button>
+      </form>
+      <button onclick="window.location.href='7th-id.html'">View</button>
+    </div>
+  </div>
+
+  <div class="install-card">
+    <h3>NTC</h3>
+    <div class="install-actions">
+      <form action="follow.php" method="post">
+        <input type="hidden" name="installation" value="NTC">
+        <button type="submit">Follow</button>
+      </form>
+      <button onclick="window.location.href='fort-polk.html'">View</button>
+    </div>
+  </div>
+
+  <div class="install-card">
+    <h3>Fort Gordon (CCoE)</h3>
+    <div class="install-actions">
+      <form action="follow.php" method="post">
+        <input type="hidden" name="installation" value="Fort Gordon">
+        <button type="submit">Follow</button>
+      </form>
+      <button onclick="window.location.href='fort-gordon.html'">View</button>
+    </div>
+  </div>
+
+  <div class="install-card">
+    <h3>Ohio National Guard</h3>
+    <div class="install-actions">
+      <form action="follow.php" method="post">
+        <input type="hidden" name="installation" value="Ohio National Guard">
+        <button type="submit">Follow</button>
+      </form>
+      <button onclick="window.location.href='ohio-ng.html'">View</button>
+    </div>
+  </div>
+
+  <div class="install-card">
+    <h3>Arkansas National Guard</h3>
+    <div class="install-actions">
+      <form action="follow.php" method="post">
+        <input type="hidden" name="installation" value="Arkansas Nationl Guard">
+        <button type="submit">Follow</button>
+      </form>
+      <button onclick="window.location.href='arkansas-ng.html'">View</button>
+    </div>
+  </div>
+
+  <div class="install-card">
+    <h3>7th SFG</h3>
+    <div class="install-actions">
+      <form action="follow.php" method="post">
+        <input type="hidden" name="installation" value="7th SFG">
+        <button type="submit">Follow</button>
+      </form>
+      <button onclick="window.location.href='7th-sfg.html'">View</button>
+    </div>
+  </div>
+  
+</div>
+<hr>
+<h3>
+  
+  <button class="go-to-request-button" onclick="window.location.href='new_installation.html'">
+  Can't Find Your Unit?
+</button>
+
+</h3>
+
+<!--sidebar panel js-->
+<script>
+  function toggleSidebar() {
+    const panel = document.getElementById("sidebarPanel");
+    const overlay = document.getElementById("overlay");
+    panel.classList.toggle("show");
+    panel.classList.toggle("hidden");
+    overlay.classList.toggle("hidden");
+  }
+</script>
+
 </body>
 </html>
